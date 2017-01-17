@@ -2,7 +2,7 @@
 
 # include rstudio-server to get pandoc
 
-/usr/bin/invoke_app "$@" -t shiny \
+/usr/bin/invoke_app "$@" -t spirormddoc \
     -u R-3.2.1 \
     -u rstudio-server-1.0.44 \
     -u wrwroxy-0.1 \
