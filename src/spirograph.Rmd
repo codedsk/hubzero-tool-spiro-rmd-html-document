@@ -19,6 +19,7 @@ This program solves those equations for three wheels, assuming all of the $a$ co
 
 
 ```{r echo = FALSE}
+library(ggplot2)
 
 spiro <- function(n1,n2,n3) {
   t <- seq(0,1,length.out=1000)
@@ -28,6 +29,9 @@ spiro <- function(n1,n2,n3) {
 }
 
 result <- spiro(13,-7,-3)
-plot(result,type="l")
+ggplot(data=result,aes(x=x,y=y)) +
+    geom_path() +
+    xlab("Real(z)") +
+    ylab("Imag(z)")
 ```
 
