@@ -29,7 +29,7 @@ spiro <- function(n1,n2,n3) {
 result <- spiro(13,-7,-3)
 ```
 
-```{r echo=FALSE}
+```{r echo=FALSE, fig.align='center'}
 library(ggplot2)
 
 ggplot(data=result,aes(x=x,y=y)) +
