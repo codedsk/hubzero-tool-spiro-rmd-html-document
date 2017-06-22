@@ -1,8 +1,8 @@
 ---
 title: "Fun with Spirographs"
 output:
-  html_notebook: default
   html_document: default
+  html_notebook: default
   pdf_document: default
 ---
 
@@ -18,9 +18,7 @@ $$z(t) = \sum_{k=1}^n a_k e^{i2\pi(n_kt+\theta_k)}$$
 This program solves those equations for three wheels, assuming all of the $a$ coefficients are 1 and $\theta$ coefficients are 0. Find more details online at <http://linuxgazette.net/133/luana.html>.
 
 
-```{r echo = FALSE}
-library(ggplot2)
-
+```{r echo=TRUE}
 spiro <- function(n1,n2,n3) {
   t <- seq(0,1,length.out=1000)
   z <- exp(1i*2*pi*n1*t) + exp(1i*2*pi*n2*t) + exp(1i*2*pi*n3*t)
@@ -29,6 +27,11 @@ spiro <- function(n1,n2,n3) {
 }
 
 result <- spiro(13,-7,-3)
+```
+
+```{r echo=FALSE, fig.align='center'}
+library(ggplot2)
+
 ggplot(data=result,aes(x=x,y=y)) +
     geom_path() +
     xlab("Real(z)") +
