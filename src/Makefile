@@ -5,8 +5,8 @@ HTMLFILE = spirograph.html
 
 all:
 	@. /etc/environ.sh; \
-		use -e -r R-3.2.1; \
-		use -e -r rstudio-server-1.0.44; \
+		use -e -r R-3.4.0; \
+		use -e -r rstudio-server-1.0.143; \
 		LANG="en_US.UTF-8"; \
 		Rscript -e "rmarkdown::render('${RMDFILE}',output_format=c('html_document'))"
 
